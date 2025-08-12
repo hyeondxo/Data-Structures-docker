@@ -115,11 +115,11 @@ int isStackPairwiseConsecutive(Stack *s) {
     // 올바른 스택 상태 확인
     if (s == NULL)
         return 0;
+    // 스택의 크기가 홀수인지 확인
+    if (s->ll.size % 2 != 0)
+        return 0;
 
     while (!isEmptyStack(s)) {
-        // 스택의 크기가 홀수인지 확인
-        if (s->ll.size % 2 != 0)
-            return 0;
         int num_1 = pop(s);
         int num_2 = pop(s);
         // 절댓값으로 차이 계산
